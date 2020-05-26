@@ -6,6 +6,10 @@ import styled from 'styled-components';
 import Item from './Item'
 import MenuItem from './MenuItem'
 
+import blackChair from '../images/black-chair.png'
+import blackTable from '../images/black-table.png'
+
+
 
 
 const LeftSection = styled.section`
@@ -21,6 +25,9 @@ const RightSection = styled.section`
     min-width: 900px;
     width: 60%;
     background-color: purple;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 `
 
 const Logo = styled.div`
@@ -53,6 +60,12 @@ const MenuContainer = styled.nav`
     font-size: ${(props => props.theme.fontSize.medium)};
     cursor: pointer;
 `
+const ForniturePicture = styled.img`
+    height: 100%;
+    width: 100%;
+    max-height: 500px;
+    max-width: 500px;
+`
 
 const Home = () => {
 
@@ -77,6 +90,8 @@ const Home = () => {
             </LeftSection>
 
             <RightSection>
+
+                <ForniturePicture src={itemSelected === 1 ? blackChair : blackTable} />
 
             </RightSection>
         </>

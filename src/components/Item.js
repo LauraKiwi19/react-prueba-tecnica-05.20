@@ -1,25 +1,21 @@
 
 import React from 'react';
 
-//import fornitureData from '../services'
+import fornitureData from '../services/fornitureData'
 
 
 
 
 const Item = props => {
 
-    if (props.selectedItem === 1) {
-        return (
-            <h1>HOAL</h1>
-        )
-    } else {
-        return (
+    return (
+        <>
             <h1>
-                ADOS
+                {fornitureData[props.selectedItem - 1].author}
             </h1>
-        )
-
-    }
+            <p> {fornitureData[props.selectedItem - 1].title}</p>
+        </>
+    )
 
 
 }
