@@ -1,7 +1,6 @@
 
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import { Spring } from 'react-spring/renderprops'
 
 
 import Item from './Item'
@@ -67,23 +66,11 @@ const ForniturePicture = styled.img`
     max-width: 500px;
 `
 
-/* const ForniturePicture = styled(animated.img)`
-    height: 100%;
-    width: 100%;
-    max-height: 500px;
-    max-width: 500px;
-` */
-
 const Home = () => {
 
     const [itemSelected, setNewItemSelected] = useState(1)
 
     const handleClick = itemClicked => setNewItemSelected(itemClicked)
-
-    /*     const props = useSpring({
-            to: { opacity: 1, marginTop: '0' },
-            from: { opacity: 0, marginTop: '-1000px' }
-        } */
 
 
 
@@ -104,12 +91,7 @@ const Home = () => {
             </LeftSection>
 
             <RightSection>
-                <Spring
-                    from={{ opacity: 0, marginTop: '-1000px' }}
-                    to={{ opacity: 1, marginTop: '0' }}>
-                    {props => <ForniturePicture style={props} src={itemSelected === 1 ? blackChair : blackTable} />}
-                </Spring>
-
+                <ForniturePicture src={itemSelected === 1 ? blackChair : blackTable} />
             </RightSection>
         </>
 
