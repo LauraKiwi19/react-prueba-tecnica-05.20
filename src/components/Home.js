@@ -6,8 +6,7 @@ import styled from 'styled-components';
 import Item from './Item'
 import MenuItem from './MenuItem'
 
-import blackChair from '../images/black-chair.png'
-import blackTable from '../images/black-table.png'
+import fornitureData from '../services/fornitureData'
 
 
 
@@ -72,6 +71,13 @@ const Home = () => {
 
     const handleClick = itemClicked => setNewItemSelected(itemClicked)
 
+    const showFornitureImage = () => {
+        const fornitureClicked = fornitureData.filter(item => item.id === itemSelected);
+        return (
+            <ForniturePicture src={fornitureClicked.map(item => item.img)} />
+        )
+    }
+
 
 
     return (
@@ -85,13 +91,16 @@ const Home = () => {
                     <DetailButton>Product Details</DetailButton>
                 </DescriptionSection>
                 <MenuContainer>
-                    <MenuItem number={1} title='Chair Dining Nose qué' handleClick={handleClick} itemSelected={itemSelected} />
-                    <MenuItem number={2} title='Table blablabla' handleClick={handleClick} itemSelected={itemSelected} />
+                    {fornitureData.map(item => {
+                        return (
+                            <MenuItem number={item.id} title={item.title} handleClick={handleClick} itemSelected={itemSelected} />
+                        )
+                    })}
                 </MenuContainer>
             </LeftSection>
 
             <RightSection>
-                <ForniturePicture src={itemSelected === 1 ? blackChair : blackTable} />
+                {showFornitureImage()}
             </RightSection>
         </>
 
