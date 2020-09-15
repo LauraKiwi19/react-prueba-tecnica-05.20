@@ -100,7 +100,7 @@ const Home = () => {
                 </Logo>
                 <DescriptionSection>
                     <Item selectedItem={itemSelected} />
-                    <DetailButton>Product Details</DetailButton>
+                    <DetailButton>Product Detailsssssss</DetailButton>
                 </DescriptionSection>
                 <MenuContainer>
                     {fornitureData.map(item => {
