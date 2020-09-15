@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react';
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 
 
 import Item from './Item'
@@ -58,11 +58,23 @@ const MenuContainer = styled.nav`
     cursor: pointer;
     display: flex;
 `
+
+const fadeIn = keyframes`
+    0%{
+        opacity: 0;
+    },
+    100%{
+        opacity: 1;
+    }
+
+`
+
 const ForniturePicture = styled.img`
     height: 100%;
     width: 100%;
     max-height: 500px;
     max-width: 500px;
+    animation: 2s ${fadeIn} ease;
 `
 
 const Home = () => {
